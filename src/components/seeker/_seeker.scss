@@ -1,0 +1,31 @@
+.seeker-component {
+  //background-color: red;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .pokeball-icon {
+    width: 30px;
+    height: auto;
+    transition: all 0.5s;
+
+    &:hover {
+      width: 50px;
+    }
+  }
+
+  input[type="text"] {
+    width: 60%;
+    background-color: transparent;
+    border-bottom: 1px solid $beige-font;
+    padding: 10px 0 10px 30px;
+    color: $light-grey-font;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

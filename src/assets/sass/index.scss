@@ -1,2 +1,9 @@
-// Import pokedex styles
-@import './components/pokedex.scss';
+// Import Colors Styles
+@import "./colors.scss";
+
+// Import global styles
+@import "./global.scss";
+
+// Import components Styles
+@import "../../components/seeker/_seeker.scss";
+@import "../../components/header/_header.scss";

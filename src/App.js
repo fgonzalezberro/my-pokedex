@@ -1,17 +1,13 @@
 // Import Styles
 import './assets/sass/index.scss';
 
-// Import Material UI
-import { Button }  from '@material-ui/core';
-
 // Import components
-import Seeker from './components/Seeker';
+import Header from './components/header/Header.js';
 
 function App() {
   return (
-    <div className="PokeApp">
-      <Seeker />
-      <Button color="primary">Buscar Pokemon</Button>
+    <div className="pokedex-app">
+      <Header />
     </div>
   );
 }
