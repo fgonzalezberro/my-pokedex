@@ -4,5 +4,11 @@
   border: 0;
 }
 
+// Seeker images
+@mixin seeker-images {
+  height: auto;
+  transition: all 0.5s;
+}
+
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
