@@ -1,0 +1,33 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $dark-transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+
+  .pichu-image {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+  }
+
+  p {
+    color: $grey-text;
+
+    .github-icon {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.5s;
+      margin: 0 10px;
+
+      &:hover {
+        color: $grey;
+      }
+    }
+  }
+}
