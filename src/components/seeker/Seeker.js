@@ -51,7 +51,7 @@ const Seeker = () =>{
                <Animated animationIn='bounceIn infinite' animationOut='tada' animationInDuration={3000} animationOutDuration={1500} isVisible={true}>
                     <FontAwesomeIcon className='search-icon' icon={faSearch} />
                </Animated>
-               <Animated animationIn='bounceIn' animationOut='rubberBand' animationInDuration={1500} animationOutDuration={1500} isVisible={imgState.statusAnimation}>
+               <Animated animationIn='flash' animationOut='rubberBand' animationInDuration={1500} animationOutDuration={1500} isVisible={imgState.statusAnimation}>
                     <img className='poke-icon' src={imgState.image} style={{'width': `${imgState.size}px`}}/>
                </Animated>
           </div>   
