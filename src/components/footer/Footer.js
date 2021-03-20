@@ -1,8 +1,13 @@
 // Import React
-import React from 'react';  
+import React , {useState} from 'react';  
 
 // Import images
 import pichu from '../../assets/img/pichu.png';
+import raichu from '../../assets/img/raichu.png';
+
+// Import Animated CSS plugin
+import {Animated} from "react-animated-css";
+
 
 // Import Fontawesome icons
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -13,11 +18,35 @@ library.add(fab);
 
 // Footer component
 const Footer = () =>{
+    // Footer image state
+    const [footerImage , setImage] = useState({
+        imageUrl : pichu,
+        imageSize : 50,
+        animationState : false
+    });
+
     const today = new Date();
     const currentYear = today.getFullYear();
 
+    // Footer hover animation
+    const footerHover = () =>{
+        setImage({
+            imageUrl : raichu,
+            imageSize : 70,
+            animationState : true
+        });
+    }
+
+    const footerLeave = () =>{
+        setImage({
+            imageUrl : pichu,
+            imageSize : 50,
+            animationState : false
+        });
+    }
+
     return(
-        <footer>
+        <footer onMouseEnter={() =>{footerHover()}} onMouseLeave={() => {footerLeave()}}>
             <p> 
                 Developed by Francisco González 
                 <FontAwesomeIcon
@@ -27,11 +56,10 @@ const Footer = () =>{
                  {currentYear} ©
             </p>
             
-            <img 
-              src={pichu} 
-              alt='Pichu image'
-              className='pichu-image'
-            />
+            
+            <Animated animationIn='flash' animationOut='rubberBand' animationInDuration={1500} animationOutDuration={1500} isVisible={footerImage.animationState}>
+                <img  src={footerImage.imageUrl}  alt='Pokemon image' className='footer-image' style={{'width' : `${footerImage.imageSize}px`}}/>
+            </Animated>
         </footer>
     );
 }

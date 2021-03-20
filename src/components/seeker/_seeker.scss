@@ -5,22 +5,12 @@
   justify-content: center;
   align-items: center;
 
-  .pokeball-icon {
-    width: 20px;
-    @include seeker-images;
-  }
-
-  .poke-icon {
-    @include seeker-images;
-    margin-left: 30px;
-  }
-
   input[type="text"] {
     width: 40%;
     background-color: transparent;
     border-bottom: 2px solid #363636;
     padding: 10px 0 10px 0px;
-    color: $light-grey-font;
+    color: $light-transparent;
     font-size: 20px;
     font-family: "Roboto", sans-serif;
     transition: all 0.5s;
@@ -32,7 +22,7 @@
 
     &::placeholder {
       text-align: center;
-      color: $beige-font;
+      color: $grey-text;
     }
   }
 

@@ -9,14 +9,14 @@ footer {
   align-items: center;
   padding: 10px 0;
 
-  .pichu-image {
-    width: 50px;
-    height: 50px;
+  .footer-image {
+    height: auto;
     margin: 0 20px;
+    transition: all 0.5s;
   }
 
   p {
-    color: $grey-text;
+    color: $grey;
 
     .github-icon {
       color: #fff;
