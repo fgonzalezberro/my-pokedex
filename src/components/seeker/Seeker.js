@@ -23,13 +23,41 @@ const Seeker = () =>{
           baseURL: 'https://pokeapi.co/api/v2/pokemon/'
      });
 
-     // Search state
+     // Search value
      const [searchValue , setSearchValue] = useState(null);
+
+     // Search state
+     const [searchState , setSeatchState] = useState({
+          reqStatus: false
+     });
 
      // Request poke api
      const reqPokeApi = async () =>{
-          const result = await API.get(searchValue);
-          console.log(result.data.name);
+          try{
+               const result = await API.get(searchValue);
+               console.log(result.data);
+               const {name , abilities , moves , types , stats , id} = result.data;
+
+               // Update the information of the pokemon found
+               setSeatchState({
+                    id,
+                    reqStatus: true,
+                    hp: stats[0].base_stat,
+                    atk: stats[1].base_stat,
+                    def: stats[2].base_stat,
+                    specialAttack: stats[3].base_stat,
+                    specialDefense: stats[4].base_stat,
+                    speed: stats[4].base_stat,
+                    name,
+                    ability: abilities[0].ability.name,
+                    principalMove: moves[0].move.name,
+                    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+                    type: types[0].type.name
+               });
+          }
+          catch(e){
+               console.log(e.request.status);
+          }
      }
 
      // Seeker animation
@@ -46,7 +74,7 @@ const Seeker = () =>{
                <input 
                     className = 'pokemon-to-search'
                     type = 'text'
-                    placeholder = 'Pokemon :  Name / ID'
+                    placeholder = 'Pokémon ( Name or ID )'
                     onMouseEnter={() => setPokeballAnimation()}
                     onMouseLeave={() => deletePokeballAnimation()} 
                     onChange={(e) => setSearchValue(e.target.value)}
