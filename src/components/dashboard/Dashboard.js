@@ -10,6 +10,7 @@ import {Animated} from "react-animated-css";
 // Import images
 import pokedex from '../../assets/img/pokedex.png';
 import masterball from '../../assets/img/masterball.png';
+import lostSearch from '../../assets/img/lost-search.png';
 
 // Dashboard component
 const Dashboard = () => {
@@ -20,17 +21,17 @@ const Dashboard = () => {
             <Animated animationIn='pulse infinite' animationOut='rubberBand' animationInDuration={3000} animationOutDuration={1500} isVisible={true}>
                 <img className='master-ball'  src={masterball}  alt='Pokemon image'/>
             </Animated>
-            {searchState.reqStatus ? <PokemonRestul searchState={searchState} />  : <EmptySearchMessage />}
+            {searchState.reqStatus ? <PokemonRestul searchState={searchState} />  : <EmptySearchMessage searchState={searchState}/>}
         </section>
     );
 };
 
  // Empty search message
- const EmptySearchMessage = () => (
+ const EmptySearchMessage = ({searchState}) => (
     <div className='empty-message'>
-        <p>No search has been made</p> 
-        <Animated animationIn='flash infinite' animationOut='rubberBand' animationInDuration={5000} animationOutDuration={1500} isVisible={true}>
-            <img  src={pokedex}  alt='Pokemon image'/>
+        {searchState.error ? <p>Error, Pokémon not found</p> : <p>No search has been made</p> }
+        <Animated animationIn='headShake infinite' animationOut='headShake' animationInDuration={5000} animationOutDuration={1500} isVisible={true}>
+            <img  src={searchState.error ? lostSearch : pokedex}  alt='Pokemon image'/>
         </Animated>
     </div>
  );
@@ -46,8 +47,8 @@ const Dashboard = () => {
         <p>Special Attack: {searchState.specialAttack}</p>
         <p>Special Defense: {searchState.specialDefense}</p>
         <p>Speed: {searchState.speed}</p>
-        <p>Principal ability: {searchState.ability}</p>
-        <p>Principal move: {searchState.principalMove}</p>
+        <p>Principal ability: {searchState.ability.charAt(0).toUpperCase() + searchState.ability.slice(1)}</p>
+        <p>Principal move: {searchState.principalMove.charAt(0).toUpperCase() + searchState.principalMove.slice(1)}</p>
         <p className={searchState.type} id='pokemon-type'>Type: {searchState.type.charAt(0).toUpperCase() + searchState.type.slice(1)}</p>
         <p>Pokemon ID: {searchState.id}</p>
     </div>

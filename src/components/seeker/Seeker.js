@@ -40,6 +40,7 @@ const Seeker = () =>{
                setSeatchState({
                     id,
                     reqStatus: true,
+                    error: false,
                     hp: stats[0].base_stat,
                     atk: stats[1].base_stat,
                     def: stats[2].base_stat,
@@ -55,6 +56,13 @@ const Seeker = () =>{
           }
           catch(e){
                setSeatchState({
+                    error: true
+               });
+          }
+
+          if(e === ''){
+               setSeatchState({
+                    error: false,
                     reqStatus: false
                });
           }

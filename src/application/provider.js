@@ -3,7 +3,8 @@ import {createContext,useState} from 'react';
 
 export default ({ children }) =>{
     const [state,setState] = useState({
-        reqStatus: false
+        reqStatus: false,
+        error: false
     });
     return (            
             <AppContext.Provider value={[state,setState]}>
