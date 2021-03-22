@@ -1,8 +1,11 @@
 // Import React
-import React , {useState} from 'react';
+import React , {useState , useContext} from 'react';
 
-// Import Axios
+// Import axios
 import axios from 'axios';
+
+// Import AppContext
+import {AppContext} from '../../application/provider.js';
 
 // Import images
 //import charmander from '../../assets/img/charmander.png';
@@ -23,18 +26,13 @@ const Seeker = () =>{
           baseURL: 'https://pokeapi.co/api/v2/pokemon/'
      });
 
-     // Search value
-     const [searchValue , setSearchValue] = useState(null);
-
      // Search state
-     const [searchState , setSeatchState] = useState({
-          reqStatus: false
-     });
+     const [searchState , setSeatchState] = useContext(AppContext);
 
      // Request poke api
-     const reqPokeApi = async () =>{
+     const reqPokeApi = async (e) =>{
           try{
-               const result = await API.get(searchValue);
+               const result = await API.get(e);
                console.log(result.data);
                const {name , abilities , moves , types , stats , id} = result.data;
 
@@ -56,7 +54,9 @@ const Seeker = () =>{
                });
           }
           catch(e){
-               console.log(e.request.status);
+               setSeatchState({
+                    reqStatus: false
+               });
           }
      }
 
@@ -77,10 +77,10 @@ const Seeker = () =>{
                     placeholder = 'Pokémon ( Name or ID )'
                     onMouseEnter={() => setPokeballAnimation()}
                     onMouseLeave={() => deletePokeballAnimation()} 
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={(e) => reqPokeApi(e.target.value)}
                />
                <Animated animationIn='bounceIn infinite' animationOut='tada' animationInDuration={3000} animationOutDuration={1500} isVisible={true}>
-                    <FontAwesomeIcon className='search-icon' icon={faSearch} onClick={() => reqPokeApi()} />
+                    <FontAwesomeIcon className='search-icon' icon={faSearch} />
                </Animated>
           </div>   
      );
