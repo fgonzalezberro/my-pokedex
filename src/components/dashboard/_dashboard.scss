@@ -1,6 +1,6 @@
 // Dashboard styles
 .dashboard {
-  width: 55%;
+  width: 40%;
   height: calc(100vh - 260px);
   background-color: $light-transparent;
   display: relative;
@@ -38,7 +38,7 @@
     }
 
     img {
-      width: 90px;
+      width: 120px;
       height: auto;
     }
   }
@@ -56,16 +56,30 @@
       height: auto;
     }
 
-    #pokemon-type {
-      padding: 2px 20px;
-      border-radius: 50px;
-      color: #fff;
+    .pokemon-result-name {
+      font-size: 1.5rem;
+      color: $grey-text;
+      font-weight: bold;
+      margin: 10px 0;
     }
 
-    p {
-      font-size: 1rem;
-      color: $grey-text;
-      margin: 2px 0;
+    .pokemon-result-data {
+      #pokemon-type {
+        padding: 2px 30px;
+        border-radius: 50px;
+        color: #fff;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $grey-text;
+        margin: 5px 0;
+
+        svg {
+          font-size: 21px;
+        }
+      }
     }
   }
 }

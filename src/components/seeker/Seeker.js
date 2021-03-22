@@ -27,44 +27,43 @@ const Seeker = () =>{
      });
 
      // Search state
-     const [searchState , setSeatchState] = useContext(AppContext);
+     const [searchState , setSearchState] = useContext(AppContext);
 
      // Request poke api
      const reqPokeApi = async (e) =>{
-          try{
-               const result = await API.get(isNaN(e) ? e.toLowerCase() : e);
-               console.log(result.data);
-               const {name , abilities , moves , types , stats , id} = result.data;
-
-               // Update the information of the pokemon found
-               setSeatchState({
-                    id,
-                    reqStatus: true,
-                    error: false,
-                    hp: stats[0].base_stat,
-                    atk: stats[1].base_stat,
-                    def: stats[2].base_stat,
-                    specialAttack: stats[3].base_stat,
-                    specialDefense: stats[4].base_stat,
-                    speed: stats[4].base_stat,
-                    name,
-                    ability: abilities[0].ability.name,
-                    principalMove: moves[0].move.name,
-                    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
-                    type: types[0].type.name
-               });
-          }
-          catch(e){
-               setSeatchState({
-                    error: true
-               });
-          }
-
           if(e === ''){
-               setSeatchState({
+               setSearchState({
                     error: false,
                     reqStatus: false
                });
+          }else{
+               try{
+                    const result = await API.get(isNaN(e) ? e.toLowerCase() : e);
+                    const {name , abilities , moves , types , stats , id} = result.data;
+     
+                    // Update the information of the pokemon found
+                    setSearchState({
+                         id,
+                         reqStatus: true,
+                         error: false,
+                         hp: stats[0].base_stat,
+                         atk: stats[1].base_stat,
+                         def: stats[2].base_stat,
+                         specialAttack: stats[3].base_stat,
+                         specialDefense: stats[4].base_stat,
+                         speed: stats[4].base_stat,
+                         name,
+                         ability: abilities[0].ability.name,
+                         principalMove: moves[0].move.name,
+                         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+                         type: types[0].type.name
+                    });
+               }
+               catch(e){
+                    setSearchState({
+                         error: true
+                    });
+               }
           }
      }
 
