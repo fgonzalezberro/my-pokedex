@@ -32,11 +32,5 @@
     background-color: #363636;
     padding: 15px;
     border-radius: 50%;
-    transition: all 0.5s;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $light-grey-font;
-    }
   }
 }
