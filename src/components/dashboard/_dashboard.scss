@@ -1,7 +1,7 @@
 // Dashboard styles
 .dashboard {
-  width: 80%;
-  height: calc(100vh - 300px);
+  width: 55%;
+  height: calc(100vh - 260px);
   background-color: $light-transparent;
   display: relative;
   justify-content: center;
@@ -13,7 +13,7 @@
   box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.46);
 
   .master-ball {
-    width: 100px;
+    width: 70px;
     height: auto;
     position: absolute;
     top: -20px !important;
@@ -22,6 +22,7 @@
 
   .empty-message {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -29,12 +30,15 @@
 
     p {
       font-size: 1rem;
-      color: $grey-text;
-      margin: 0 10px 0 0;
+      color: #fff;
+      margin: 30px 0;
+      padding: 2px 40px;
+      border-radius: 50px;
+      background-color: $dark-transparent;
     }
 
     img {
-      width: 60px;
+      width: 90px;
       height: auto;
     }
   }

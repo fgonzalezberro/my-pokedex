@@ -32,7 +32,7 @@ const Seeker = () =>{
      // Request poke api
      const reqPokeApi = async (e) =>{
           try{
-               const result = await API.get(e);
+               const result = await API.get(isNaN(e) ? e.toLowerCase() : e);
                console.log(result.data);
                const {name , abilities , moves , types , stats , id} = result.data;
 
@@ -68,28 +68,15 @@ const Seeker = () =>{
           }
      }
 
-     // Seeker animation
-     const setPokeballAnimation = () =>{
-          document.querySelector('.pokemon-to-search').style.width = '60%';
-     }
-
-     const deletePokeballAnimation = () =>{
-          document.querySelector('.pokemon-to-search').style.width = '40%';
-     }
-
      return(
           <div className='seeker-component'>
                <input 
                     className = 'pokemon-to-search'
                     type = 'text'
-                    placeholder = 'Pokémon ( Name or ID )'
-                    onMouseEnter={() => setPokeballAnimation()}
-                    onMouseLeave={() => deletePokeballAnimation()} 
+                    placeholder = 'Enter Pokémon name or ID'
                     onChange={(e) => reqPokeApi(e.target.value)}
                />
-               <Animated animationIn='bounceIn infinite' animationOut='tada' animationInDuration={3000} animationOutDuration={1500} isVisible={true}>
-                    <FontAwesomeIcon className='search-icon' icon={faSearch} />
-               </Animated>
+               <FontAwesomeIcon className='search-icon' icon={faSearch} />
           </div>   
      );
 }

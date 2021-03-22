@@ -8,7 +8,6 @@ import raichu from '../../assets/img/raichu.png';
 // Import Animated CSS plugin
 import {Animated} from "react-animated-css";
 
-
 // Import Fontawesome icons
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,19 +47,23 @@ const Footer = () =>{
     return(
         <footer onMouseEnter={() =>{footerHover()}} onMouseLeave={() => {footerLeave()}}>
             <p> 
-                Developed by Francisco González 
-                <FontAwesomeIcon
-                    icon={['fab', 'github']} 
-                    className='github-icon'
-                 />
-                 {currentYear} ©
+                Developed by Francisco González
+
+                <a href='https://github.com/fgonzalezberro'>
+                    <FontAwesomeIcon
+                        icon={['fab', 'github']} 
+                        className='github-icon'
+                    />
+                </a>
+                
+                {currentYear} ©
             </p>
-            
-            
+
             <Animated animationIn='flash' animationOut='rubberBand' animationInDuration={1500} animationOutDuration={1500} isVisible={footerImage.animationState}>
-                <img  src={footerImage.imageUrl}  alt='Pokemon image' className='footer-image' style={{'width' : `${footerImage.imageSize}px`}}/>
+                <img src={footerImage.imageUrl}  alt='Pokemon image' className='footer-image' style={{'width' : `${footerImage.imageSize}px`}}/>
             </Animated>
-        </footer>
+    </footer>
+       
     );
 }
 

@@ -8,7 +8,7 @@ import {AppContext} from '../../application/provider.js';
 import {Animated} from "react-animated-css";
 
 // Import images
-import pokedex from '../../assets/img/pokedex.png';
+import pikachuDetective from '../../assets/img/pikachu-detective.png';
 import masterball from '../../assets/img/masterball.png';
 import lostSearch from '../../assets/img/lost-search.png';
 
@@ -29,10 +29,8 @@ const Dashboard = () => {
  // Empty search message
  const EmptySearchMessage = ({searchState}) => (
     <div className='empty-message'>
-        {searchState.error ? <p>Error, Pokémon not found</p> : <p>No search has been made</p> }
-        <Animated animationIn='headShake infinite' animationOut='headShake' animationInDuration={5000} animationOutDuration={1500} isVisible={true}>
-            <img  src={searchState.error ? lostSearch : pokedex}  alt='Pokemon image'/>
-        </Animated>
+        <img  src={searchState.error ? lostSearch : pikachuDetective}  alt='Pokemon image'/>
+        {searchState.error ? <p>Pokémon not found.</p> : <p>No search has been made.</p> }
     </div>
  );
 
