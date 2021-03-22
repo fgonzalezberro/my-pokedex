@@ -48,7 +48,7 @@ const Dashboard = () => {
         <p>Speed: {searchState.speed}</p>
         <p>Principal ability: {searchState.ability}</p>
         <p>Principal move: {searchState.principalMove}</p>
-        <p>Type: {searchState.type}</p>
+        <p className={searchState.type}>Type: {searchState.type}</p>
         <p>Pokemon ID: {searchState.id}</p>
     </div>
  );
