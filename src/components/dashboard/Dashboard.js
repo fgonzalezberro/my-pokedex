@@ -39,7 +39,7 @@ const Dashboard = () => {
  const PokemonRestul = ({searchState}) => (
     <div className='pokemon-result'>
         <img src={searchState.image} alt='Poke image'/>
-        <p>Nombre: {searchState.name}</p>
+        <p>Nombre: {searchState.name.charAt(0).toUpperCase() + searchState.name.slice(1)}</p>
         <p>HP: {searchState.hp}</p>
         <p>Attack: {searchState.atk}</p>
         <p>Defense: {searchState.def}</p>
@@ -48,7 +48,7 @@ const Dashboard = () => {
         <p>Speed: {searchState.speed}</p>
         <p>Principal ability: {searchState.ability}</p>
         <p>Principal move: {searchState.principalMove}</p>
-        <p className={searchState.type}>Type: {searchState.type}</p>
+        <p className={searchState.type} id='pokemon-type'>Type: {searchState.type.charAt(0).toUpperCase() + searchState.type.slice(1)}</p>
         <p>Pokemon ID: {searchState.id}</p>
     </div>
  );
