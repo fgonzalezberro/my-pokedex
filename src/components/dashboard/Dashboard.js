@@ -13,7 +13,7 @@ import { faHeart, faRocket, faMeteor, faShieldAlt, faShieldVirus, faBolt, faRunn
 
 // Import images
 import pikachuDetective from '../../assets/img/pikachu-detective.png';
-import masterball from '../../assets/img/masterball.png';
+import pokeball from '../../assets/img/pokeball.png';
 import lostSearch from '../../assets/img/lost-search.png';
 
 // Dashboard component
@@ -23,7 +23,7 @@ const Dashboard = () => {
     return (
         <section className='dashboard'>
             <Animated animationIn='pulse infinite' animationOut='rubberBand' animationInDuration={3000} animationOutDuration={1500} isVisible={true}>
-                <img className='master-ball'  src={masterball}  alt='Pokemon image'/>
+                <img className='master-ball'  src={pokeball}  alt='Pokemon image'/>
             </Animated>
             {searchState.reqStatus ? <PokemonRestul searchState={searchState} />  : <EmptySearchMessage searchState={searchState}/>}
         </section>

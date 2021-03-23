@@ -1,15 +1,11 @@
 // Import React
-import React , {useState , useContext} from 'react';
+import React , {useContext} from 'react';
 
 // Import axios
 import axios from 'axios';
 
 // Import AppContext
 import {AppContext} from '../../application/provider.js';
-
-// Import images
-//import charmander from '../../assets/img/charmander.png';
-//import charizard from '../../assets/img/charizard.png';
 
 // Import Animated CSS plugin
 import {Animated} from "react-animated-css";
@@ -72,7 +68,7 @@ const Seeker = () =>{
                <input 
                     className = 'pokemon-to-search'
                     type = 'text'
-                    placeholder = 'Enter Pokémon name or ID'
+                    placeholder = 'Pokémon name or ID'
                     onChange={(e) => reqPokeApi(e.target.value)}
                />
                <FontAwesomeIcon className='search-icon' icon={faSearch} />

@@ -20,6 +20,10 @@ body {
   align-content: space-between;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap");

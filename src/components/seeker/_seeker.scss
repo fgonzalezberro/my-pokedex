@@ -7,13 +7,13 @@
 
   input[type="text"] {
     width: 60%;
-    background-color: transparent;
-    border-bottom: 2px solid #363636;
-    border-top: 2px solid #363636;
-    border-left: 2px solid #363636;
+    background-color: $yellow;
+    border-bottom: 3px solid $blue;
+    border-top: 3px solid $blue;
+    border-left: 3px solid $blue;
     border-radius: 50px;
     padding: 10px 0;
-    color: $light-transparent;
+    color: $blue;
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     transition: all 0.5s;
@@ -25,6 +25,7 @@
 
     &::placeholder {
       text-align: center;
+      color: $blue;
     }
 
     &:hover {
@@ -33,9 +34,10 @@
   }
 
   .search-icon {
-    color: $grey;
+    color: $blue;
+    border: 3px $blue solid;
     font-size: 25px;
-    background-color: #363636;
+    background-color: $yellow;
     padding: 15px;
     border-radius: 50%;
     margin-left: -35px;
