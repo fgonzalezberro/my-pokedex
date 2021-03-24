@@ -1,8 +1,8 @@
 // Dashboard styles
 .dashboard {
-  width: 40%;
+  width: 70%;
   height: calc(100vh - 260px);
-  background-color: $light-transparent;
+  background-color: $red-transparent;
   display: relative;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@
 
     .pokemon-result-name {
       font-size: 1.5rem;
-      color: $grey-text;
+      color: $light-grey-font;
       font-weight: bold;
       margin: 10px 0;
     }
@@ -72,7 +72,7 @@
 
       p {
         font-size: 1rem;
-        color: $grey-text;
+        color: $light-grey-font;
         margin: 5px 0;
 
         svg {

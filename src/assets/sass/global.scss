@@ -8,6 +8,16 @@ body {
   background-image: url("../../assets/img/pokedex.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-size: 150%;
+  animation: move 10s linear infinite alternate;
+  @keyframes move {
+    from {
+      background-position: bottom left;
+    }
+    to {
+      background-position: top right;
+    }
+  }
 }
 
 .pokedex-app {
