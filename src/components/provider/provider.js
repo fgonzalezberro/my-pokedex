@@ -1,5 +1,5 @@
 // Import react
-import {createContext,useState} from 'react';
+import {createContext , useState} from 'react';
 
 export default ({ children }) =>{
     const [state,setState] = useState({});

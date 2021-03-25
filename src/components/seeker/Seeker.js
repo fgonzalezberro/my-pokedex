@@ -5,7 +5,7 @@ import React , {useContext , useEffect} from 'react';
 import axios from 'axios';
 
 // Import AppContext
-import {AppContext} from '../../application/provider.js';
+import {AppContext} from '../provider/provider.js';
 
 // Import Animated CSS plugin
 import {Animated} from "react-animated-css";
