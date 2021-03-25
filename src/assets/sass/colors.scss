@@ -1,13 +1,83 @@
 // Fonts colors
-$yellow: #f7c506;
 $light-grey-font: #fff;
-$beige-font: #dbbc90;
 $grey: #999999;
 $grey-text: rgba(115, 115, 115);
-$blue: #2d6596;
 $dark-grey: #363636;
 
 // Background colors
 $dark-transparent: rgba(26, 26, 26, 0.82);
 $light-transparent: rgba(255, 255, 255, 0.8);
 $red-transparent: rgba(255, 0, 0, 0.7);
+
+// Pokemon Types colors
+.normal {
+  background-color: #ad986d !important;
+}
+
+.fighting {
+  background-color: #fd5b6c !important;
+}
+
+.flying {
+  background-color: #808dc5 !important;
+}
+
+.poison {
+  background-color: #b663a4 !important;
+}
+
+.ground {
+  background-color: #e6b059 !important;
+}
+
+.rock {
+  background-color: #aaa05f !important;
+}
+
+.bug {
+  background-color: #94ab38 !important;
+}
+
+.ghost {
+  background-color: #866e8b !important;
+}
+
+.steel {
+  background-color: #89b5bd !important;
+}
+
+.fire {
+  background-color: #f37b5b !important;
+}
+
+.water {
+  background-color: #46ccd4 !important;
+}
+
+.grass {
+  background-color: #7ec653 !important;
+}
+
+.electric {
+  background-color: #fec41d !important;
+}
+
+.psychic {
+  background-color: #ff5e96 !important;
+}
+
+.ice {
+  background-color: #6edbd3 !important;
+}
+
+.dragon {
+  background-color: #5964b9 !important;
+}
+
+.dark {
+  background-color: #594f4f !important;
+}
+
+.fairy {
+  background-color: #fe75a8 !important;
+}

@@ -7,7 +7,7 @@ import Dashabord from './components/dashboard/Dashboard.js';
 import Footer from './components/footer/Footer.js';
 
 // Import context provider
-import Provider from './application/provider.js';
+import Provider from './components/provider/provider.js';
 
 function App() {
   return (
