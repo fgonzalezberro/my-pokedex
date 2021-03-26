@@ -1,5 +1,6 @@
 // Fonts colors
 $light-grey-font: #fff;
+$white-font: #fff;
 $grey: #999999;
 $grey-text: rgba(115, 115, 115);
 $dark-grey: #363636;
@@ -7,77 +8,79 @@ $dark-grey: #363636;
 // Background colors
 $dark-transparent: rgba(26, 26, 26, 0.82);
 $light-transparent: rgba(255, 255, 255, 0.8);
-$red-transparent: rgba(255, 0, 0, 0.7);
+$red-transparent: rgba(255, 0, 0, 0.6);
+$red-transparent-08: rgba(255, 0, 0, 0.8);
+$beige-background: rgb(249, 209, 138);
 
 // Pokemon Types colors
 .normal {
-  background-color: #ad986d !important;
+  background-color: #969592 !important;
 }
 
 .fighting {
-  background-color: #fd5b6c !important;
+  background-color: #d77a49 !important;
 }
 
 .flying {
-  background-color: #808dc5 !important;
+  background-color: #5983ef !important;
 }
 
 .poison {
-  background-color: #b663a4 !important;
+  background-color: #82549a !important;
 }
 
 .ground {
-  background-color: #e6b059 !important;
+  background-color: #9a5e41 !important;
 }
 
 .rock {
-  background-color: #aaa05f !important;
+  background-color: #a28d79 !important;
 }
 
 .bug {
-  background-color: #94ab38 !important;
+  background-color: #9eb559 !important;
 }
 
 .ghost {
-  background-color: #866e8b !important;
+  background-color: #a2729a !important;
 }
 
 .steel {
-  background-color: #89b5bd !important;
+  background-color: #7d879a !important;
 }
 
 .fire {
-  background-color: #f37b5b !important;
+  background-color: #db4249 !important;
 }
 
 .water {
-  background-color: #46ccd4 !important;
+  background-color: #55b8e2 !important;
 }
 
 .grass {
-  background-color: #7ec653 !important;
+  background-color: #459f4d !important;
 }
 
 .electric {
-  background-color: #fec41d !important;
+  background-color: #dbb508 !important;
 }
 
 .psychic {
-  background-color: #ff5e96 !important;
+  background-color: #e76e9a !important;
 }
 
 .ice {
-  background-color: #6edbd3 !important;
+  background-color: #6db5ba !important;
 }
 
 .dragon {
-  background-color: #5964b9 !important;
+  background-color: #1085a2 !important;
 }
 
 .dark {
-  background-color: #594f4f !important;
+  background-color: #555461 !important;
 }
 
 .fairy {
-  background-color: #fe75a8 !important;
+  background-color: #ef9bb6 !important;
 }
