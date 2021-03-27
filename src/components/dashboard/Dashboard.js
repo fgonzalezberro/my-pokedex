@@ -15,6 +15,7 @@ import { faHeart, faRocket, faMeteor, faShieldAlt, faShieldVirus, faBolt, faRunn
 import charizard from '../../assets/img/charizard.gif';
 import pokeball from '../../assets/img/pokeball.png';
 import lostSearch from '../../assets/img/lost-search.png';
+import fireType from '../../assets/img/attributes-img/fire-type.png';
 
 // Dashboard component
 const Dashboard = () => {
@@ -45,7 +46,7 @@ const Dashboard = () => {
  const PokemonRestul = ({searchState}) => (
     <div className='pokemon-result'>
         <div className='pokemon-result-data'>
-            <div className={`pokemon-name ${searchState.type}`}>
+            <div className='pokemon-name'>
                 <p className='pokemon-result-name'>{searchState.name.charAt(0).toUpperCase() + searchState.name.slice(1)}</p>
             </div>
 
@@ -53,10 +54,12 @@ const Dashboard = () => {
                 <Animated animationIn='zoomIn' animationOut='heartBeat' animationInDuration={3000} animationOutDuration={1000} isVisible={true}>
                     <img src={searchState.image} alt='Poke image'/>
                 </Animated>
+
+                <img className='pokemon-attribute-ico' src={fireType}/>
             </div>
 
-            <div className={`pokemon-id ${searchState.type}`}> 
-                <p><FontAwesomeIcon icon={faIdCardAlt}/> ID: {searchState.id}</p>
+            <div className='pokemon-id'> 
+                <p>ID: {searchState.id}</p>
             </div>
         </div>
         
@@ -87,7 +90,7 @@ const Dashboard = () => {
                     <progress value={searchState.speed} max='160'></progress>
                 </div>
                 <div className='pokemon-attribute'>
-                    <p><FontAwesomeIcon icon={faViruses}/> Type: <span className={searchState.type} id='pokemon-type'>{searchState.type.charAt(0).toUpperCase() + searchState.type.slice(1)}</span></p>
+                    <p><FontAwesomeIcon icon={faViruses}/> Type: <span className={`${searchState.type} pokemon-type`}>{searchState.type.charAt(0).toUpperCase() + searchState.type.slice(1)}</span></p>
                 </div>
                 <div className='pokemon-attribute'>
                     <p><FontAwesomeIcon icon={faRunning}/> Principal move: {searchState.principalMove.charAt(0).toUpperCase() + searchState.principalMove.slice(1)}</p>
