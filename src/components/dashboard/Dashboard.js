@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faRocket, faMeteor, faShieldAlt, faShieldVirus, faBolt, faRunning, faIdCardAlt, faBomb, faViruses} from '@fortawesome/free-solid-svg-icons'
 
 // Import images
-import snorlax from '../../assets/img/snorlax.png';
+import charizard from '../../assets/img/charizard.gif';
 import pokeball from '../../assets/img/pokeball.png';
 import lostSearch from '../../assets/img/lost-search.png';
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
  // Empty search message
  const EmptySearchMessage = ({searchState}) => (
     <div className='empty-message'>
-        <img  src={searchState.error ? lostSearch : snorlax}  alt='Pokemon image'/>
+        <img  src={searchState.error ? lostSearch : charizard}  alt='Pokemon image'/>
         {searchState.error ? <p>Pokémon not found.</p> : <p>No search has been made.</p> }
     </div>
  );
