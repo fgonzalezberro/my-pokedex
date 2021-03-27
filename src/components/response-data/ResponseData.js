@@ -13,6 +13,23 @@ import {Animated} from "react-animated-css";
 
 // Import image
 import fire from '../../assets/img/attributes-img/fire-type.png';
+import bug from '../../assets/img/attributes-img/bug-type.webp';
+import dark from '../../assets/img/attributes-img/dark-type.png';
+import dragon from '../../assets/img/attributes-img/dragon-type.webp';
+import electric from '../../assets/img/attributes-img/electric-type.webp';
+import fairy from '../../assets/img/attributes-img/fairy-type.webp';
+import fighting from '../../assets/img/attributes-img/fighting-type.png';
+import flying from '../../assets/img/attributes-img/flying-type.webp';
+import ghost from '../../assets/img/attributes-img/ghost-type.png';
+import grass from '../../assets/img/attributes-img/grass-type.webp';
+import ground from '../../assets/img/attributes-img/ground-type.webp';
+import ice from '../../assets/img/attributes-img/ice-type.webp';
+import normal from '../../assets/img/attributes-img/normal-type.webp';
+import poison from '../../assets/img/attributes-img/poison-type.webp';
+import psychic from '../../assets/img/attributes-img/psychic-type.png';
+import rock from '../../assets/img/attributes-img/rock-type.webp';
+import steel from '../../assets/img/attributes-img/steel-type.webp';
+import water from '../../assets/img/attributes-img/water-type.webp';
 
 
 const ResponseData = () => {
@@ -20,6 +37,26 @@ const ResponseData = () => {
 
     // Destructuring object
     const {id, hp, atk, def, specialAttack, specialDefense, speed, name, ability, principalMove, type, image} = searchState;
+
+    // Icon Attribute to set
+    const iconToSet =  (
+                            type === 'bug' ? bug:
+                            type === 'dark' ? dark:
+                            type === 'fire' ? fire:
+                            type === 'dragon' ? dragon:
+                            type === 'fairy' ? fairy:
+                            type === 'fighting' ? fighting:
+                            type === 'flying' ? flying:
+                            type === 'ghost' ? ghost:
+                            type === 'grass' ? grass:
+                            type === 'ground' ? ground:
+                            type === 'ice' ? ice:
+                            type === 'normal' ? normal:
+                            type === 'poison' ? poison:
+                            type === 'psychic' ? psychic:
+                            type === 'rock' ? rock:
+                            type === 'steel' ? steel : water
+                        );
 
     return (
         <div className='pokemon-response'>
@@ -33,7 +70,7 @@ const ResponseData = () => {
                         <img src={image} alt='Pokemon image'/>
                     </Animated>
 
-                    <img className='pokemon-attribute-ico' src={fire}/>
+                    <img className='pokemon-attribute-ico' src={iconToSet}  />
                 </div>
 
                 <div className='pokemon-id'> 
@@ -45,7 +82,7 @@ const ResponseData = () => {
                 <div className='pokemon-response-attributes-container'>
                     <div className='pokemon-attribute'>
                         <p><FontAwesomeIcon icon={faHeart}/> HP: {hp}</p>
-                        <progress className={searchState.type} value={hp} max='160'>{searchState.hp}</progress>
+                        <progress className={type} value={hp} max='160'>{hp}</progress>
                     </div>
                     <div className='pokemon-attribute'>
                         <p><FontAwesomeIcon icon={faRocket}/> Attack: {atk}</p>

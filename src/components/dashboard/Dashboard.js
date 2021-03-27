@@ -15,23 +15,6 @@ import ResponseData from '../response-data/ResponseData';
 
 // Import images
 import pokeball from '../../assets/img/pokeball.png';
-import bug from '../../assets/img/attributes-img/bug-type.webp';
-import dark from '../../assets/img/attributes-img/dark-type.png';
-import dragon from '../../assets/img/attributes-img/dragon-type.webp';
-import electric from '../../assets/img/attributes-img/electric-type.webp';
-import fairy from '../../assets/img/attributes-img/fairy-type.webp';
-import fighting from '../../assets/img/attributes-img/fighting-type.png';
-import flying from '../../assets/img/attributes-img/flying-type.webp';
-import ghost from '../../assets/img/attributes-img/ghost-type.png';
-import grass from '../../assets/img/attributes-img/grass-type.webp';
-import ground from '../../assets/img/attributes-img/ground-type.webp';
-import ice from '../../assets/img/attributes-img/ice-type.webp';
-import normal from '../../assets/img/attributes-img/normal-type.webp';
-import poison from '../../assets/img/attributes-img/poison-type.webp';
-import psychic from '../../assets/img/attributes-img/psychic-type.png';
-import rock from '../../assets/img/attributes-img/rock-type.webp';
-import steel from '../../assets/img/attributes-img/steel-type.webp';
-import water from '../../assets/img/attributes-img/water-type.webp';
 
 // Dashboard component
 const Dashboard = () => {
