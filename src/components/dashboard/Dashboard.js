@@ -8,18 +8,40 @@ import {AppContext} from '../provider/provider.js';
 import {Animated} from "react-animated-css";
 
 // Import react icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faRocket, faMeteor, faShieldAlt, faShieldVirus, faBolt, faRunning, faIdCardAlt, faBomb, faViruses} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faRocket, faMeteor, faShieldAlt, faShieldVirus, faBolt, faRunning, faIdCardAlt, faBomb, faViruses} from '@fortawesome/free-solid-svg-icons';
+
+// Import Components
+import ErrorMessage from '../error-message/ErrorMessage';
+import EmptyMessage from '../empty-message/EmptyMessage';
 
 // Import images
-import charizard from '../../assets/img/charizard.gif';
 import pokeball from '../../assets/img/pokeball.png';
-import lostSearch from '../../assets/img/lost-search.png';
-import fireType from '../../assets/img/attributes-img/fire-type.png';
+import fire from '../../assets/img/attributes-img/fire-type.png';
+import bug from '../../assets/img/attributes-img/bug-type.webp';
+import dark from '../../assets/img/attributes-img/dark-type.png';
+import dragon from '../../assets/img/attributes-img/dragon-type.webp';
+import electric from '../../assets/img/attributes-img/electric-type.webp';
+import fairy from '../../assets/img/attributes-img/fairy-type.webp';
+import fighting from '../../assets/img/attributes-img/fighting-type.png';
+import flying from '../../assets/img/attributes-img/flying-type.webp';
+import ghost from '../../assets/img/attributes-img/ghost-type.png';
+import grass from '../../assets/img/attributes-img/grass-type.webp';
+import ground from '../../assets/img/attributes-img/ground-type.webp';
+import ice from '../../assets/img/attributes-img/ice-type.webp';
+import normal from '../../assets/img/attributes-img/normal-type.webp';
+import poison from '../../assets/img/attributes-img/poison-type.webp';
+import psychic from '../../assets/img/attributes-img/psychic-type.png';
+import rock from '../../assets/img/attributes-img/rock-type.webp';
+import steel from '../../assets/img/attributes-img/steel-type.webp';
+import water from '../../assets/img/attributes-img/water-type.webp';
 
 // Dashboard component
 const Dashboard = () => {
     const [searchState , setSeatchState] = useContext(AppContext);
+
+    // Destructuring object
+    const {id, hp, atk, def, specialAttack, specialDefense, speed, name, ability, principalMove, type} = searchState;
 
     return (
         <section className='dashboard'>
@@ -28,22 +50,19 @@ const Dashboard = () => {
             </Animated>
 
             <div className='data-dashboard'>
-                {searchState.reqStatus ? <PokemonRestul searchState={searchState} />  : <EmptySearchMessage searchState={searchState}/>}
+                {searchState.reqStatus ? <PokemonRestul searchState={searchState} />  : <DashboardMessage searchState={searchState}/>}
             </div>
         </section>
     );
 };
 
  // Empty search message
- const EmptySearchMessage = ({searchState}) => (
-    <div className='empty-message'>
-        <img  src={searchState.error ? lostSearch : charizard}  alt='Pokemon image'/>
-        {searchState.error ? <p>Pokémon not found.</p> : <p>No search has been made.</p> }
-    </div>
+ const DashboardMessage = ({searchState}) => (
+    searchState.error ? <ErrorMessage /> : <EmptyMessage />
  );
 
  // Pokemon search result
- const PokemonRestul = ({searchState}) => (
+ const PokemonRestul = ({searchState}) => (  
     <div className='pokemon-result'>
         <div className='pokemon-result-data'>
             <div className='pokemon-name'>
@@ -55,7 +74,7 @@ const Dashboard = () => {
                     <img src={searchState.image} alt='Poke image'/>
                 </Animated>
 
-                <img className='pokemon-attribute-ico' src={fireType}/>
+                <img className='pokemon-attribute-ico' src={fire}/>
             </div>
 
             <div className='pokemon-id'> 
