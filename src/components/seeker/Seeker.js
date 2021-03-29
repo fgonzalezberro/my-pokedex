@@ -25,6 +25,9 @@ const Seeker = () =>{
      // Request poke api
      const reqPokeApi = async (e) =>{
           e.preventDefault();
+          
+          const dataTA = new FormData(e.target.value);
+          console.log(dataTA.pokeChu)
 
           const {pokemonToSearch} = searchState;
 
@@ -63,7 +66,8 @@ const Seeker = () =>{
                catch(err){
                     setSearchState({
                          ...searchState,
-                         error: true
+                         error: true,
+                         reqStatus: false
                     });
                }
           }
@@ -77,6 +81,7 @@ const Seeker = () =>{
                          type = 'text'
                          placeholder = 'Pokémon name or ID'
                          onChange={(e) => setSearchState({...searchState, pokemonToSearch : e.target.value})}
+                         name='pokeChu'
                     />
                </form>
                <FontAwesomeIcon className='search-icon' icon={faSearch} />

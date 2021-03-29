@@ -55,6 +55,7 @@ const ResponseData = () => {
                             type === 'poison' ? poison:
                             type === 'psychic' ? psychic:
                             type === 'rock' ? rock:
+                            type === 'electric' ? electric:
                             type === 'steel' ? steel : water
                         );
 
