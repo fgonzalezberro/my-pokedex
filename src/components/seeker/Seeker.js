@@ -7,9 +7,6 @@ import axios from 'axios';
 // Import AppContext
 import {AppContext} from '../provider/provider.js';
 
-// Import Animated CSS plugin
-import {Animated} from "react-animated-css";
-
 // Import Fontawesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -27,18 +24,26 @@ const Seeker = () =>{
 
      // Request poke api
      const reqPokeApi = async (e) =>{
-          if(e === ''){
+          e.preventDefault();
+
+          const {pokemonToSearch} = searchState;
+
+          console.log(e);
+
+          if(pokemonToSearch === ''){
                setSearchState({
+                    ...searchState,
                     error: false,
                     reqStatus: false
                });
           }else{
                try{
-                    const result = await API.get(isNaN(e) ? e.toLowerCase() : e);
+                    const result = await API.get(isNaN(pokemonToSearch) ? pokemonToSearch.toLowerCase() : pokemonToSearch);
                     const {name , abilities , moves , types , stats , id} = result.data;
      
                     // Update the information of the pokemon found
                     setSearchState({
+                         ...searchState,
                          id,
                          reqStatus: true,
                          error: false,
@@ -55,8 +60,9 @@ const Seeker = () =>{
                          type: types[0].type.name
                     });
                }
-               catch(e){
+               catch(err){
                     setSearchState({
+                         ...searchState,
                          error: true
                     });
                }
@@ -65,12 +71,14 @@ const Seeker = () =>{
 
      return(
           <div className='seeker-component'>
-               <input 
-                    className = 'pokemon-to-search'
-                    type = 'text'
-                    placeholder = 'Pokémon name or ID'
-                    onChange={(e) => reqPokeApi(e.target.value)}
-               />
+               <form onSubmit={reqPokeApi}>
+                    <input 
+                         className = 'pokemon-to-search'
+                         type = 'text'
+                         placeholder = 'Pokémon name or ID'
+                         onChange={(e) => setSearchState({...searchState, pokemonToSearch : e.target.value})}
+                    />
+               </form>
                <FontAwesomeIcon className='search-icon' icon={faSearch} />
           </div>   
      );
