@@ -25,6 +25,12 @@ const Seeker = () =>{
      // Request poke api
      const reqPokeApi = async (e) =>{
           e.preventDefault();
+
+          // Display loader
+          setSearchState({
+               ...searchState,
+               loading: true
+          });
           
           const dataTA = new FormData(e.target.value);
           console.log(dataTA.pokeChu)
@@ -60,14 +66,16 @@ const Seeker = () =>{
                          ability: abilities[0].ability.name,
                          principalMove: moves[0].move.name,
                          image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
-                         type: types[0].type.name
+                         type: types[0].type.name,
+                         loading: false
                     });
                }
                catch(err){
                     setSearchState({
                          ...searchState,
                          error: true,
-                         reqStatus: false
+                         reqStatus: false,
+                         loading: false
                     });
                }
           }

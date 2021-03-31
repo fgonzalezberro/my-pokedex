@@ -2,7 +2,11 @@
 import {createContext , useState} from 'react';
 
 export default ({ children }) =>{
-    const [state,setState] = useState({});
+    // Set initial provier state
+    const [state,setState] = useState({
+        loading: false
+    });
+
     return (            
             <AppContext.Provider value={[state,setState]}>
                 {children}

@@ -7,11 +7,11 @@ import {AppContext} from '../provider/provider.js';
 // Import Animated CSS plugin
 import {Animated} from "react-animated-css";
 
-
 // Import Components
 import ErrorMessage from '../error-message/ErrorMessage';
 import EmptyMessage from '../empty-message/EmptyMessage';
 import ResponseData from '../response-data/ResponseData';
+import Loader from '../loader/Loader.js';
 
 // Import images
 import pokeball from '../../assets/img/pokeball.png';
@@ -21,7 +21,7 @@ const Dashboard = () => {
     const [searchState , setSeatchState] = useContext(AppContext);
 
     // Destructuring object
-    const {reqStatus , error} = searchState;
+    const {reqStatus , error, loading} = searchState;
 
     return (
         <section className='dashboard'>
@@ -30,7 +30,7 @@ const Dashboard = () => {
             </Animated>
 
             <div className='data-dashboard'>
-                {reqStatus ? <ResponseData />  : <DashboardMessage error={error}/>}
+                {loading ? <Loader /> : reqStatus ? <ResponseData />  : <DashboardMessage error={error}/>}
             </div>
         </section>
     );

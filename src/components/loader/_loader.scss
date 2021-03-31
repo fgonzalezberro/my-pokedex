@@ -1,0 +1,19 @@
+// Loader styles open
+.loader {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+
+  p {
+    font-size: 20px;
+    color: $grey;
+  }
+}
