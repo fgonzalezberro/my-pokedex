@@ -18,9 +18,8 @@
       border-radius: 50px;
       padding: 10px 0;
       color: $light-grey-font;
-      font-size: 18px;
-      font-family: "Roboto", sans-serif;
       text-align: center;
+      @include normal-font;
 
       &:focus {
         outline: none;

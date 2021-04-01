@@ -1,10 +1,9 @@
 .header {
-  background-color: transparent;
-  height: 90px;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 90px;
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
+  @include flex-col-center-center;
 }

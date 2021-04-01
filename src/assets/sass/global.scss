@@ -20,19 +20,13 @@ body {
   }
 }
 
-.pokedex-app {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-content: space-between;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap");
 
 // Mixin's
 @mixin flex-col-center-center {
@@ -49,6 +43,31 @@ body {
   flex-direction: row;
 }
 
-// Fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap");
+@mixin title-font {
+  color: $white-font;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin normal-font {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin blackBackground {
+  background: rgb(2, 0, 36);
+  background: rgb(153, 153, 153);
+  background: radial-gradient(
+    circle,
+    rgba(153, 153, 153, 1) 0%,
+    rgba(54, 54, 54, 1) 100%
+  );
+}
+
+.pokedex-app {
+  height: 100vh;
+  width: 100%;
+  align-content: space-between;
+  @include flex-col-center-center;
+}
