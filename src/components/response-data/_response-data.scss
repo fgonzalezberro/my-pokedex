@@ -69,11 +69,16 @@
         align-items: center;
         margin: 5px 0;
 
-        .pokemon-type {
-          padding: 2px 30px;
-          border-radius: 50px;
-          color: $light-grey-font;
-          text-align: center;
+        .pokemon-attribute-animated-type {
+          display: inline;
+          margin: 0 0 0 10px;
+
+          .pokemon-type {
+            padding: 2px 30px;
+            border-radius: 50px;
+            color: $light-grey-font;
+            text-align: center;
+          }
         }
 
         p {

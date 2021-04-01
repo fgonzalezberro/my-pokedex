@@ -106,7 +106,12 @@ const ResponseData = () => {
                         <progress value={speed} max='160'></progress>
                     </div>
                     <div className='pokemon-attribute'>
-                        <p><FontAwesomeIcon icon={faViruses}/> Type: <span className={`${type} pokemon-type`}>{type.charAt(0).toUpperCase() + type.slice(1)}</span></p>
+                        <p>
+                            <FontAwesomeIcon icon={faViruses}/> Type: 
+                            <Animated className='pokemon-attribute-animated-type' animationIn='flash' animationOut='' animationInDuration={3000} animationOutDuration={1000} isVisible={true}>
+                                <span className={`${type} pokemon-type`}>{type.charAt(0).toUpperCase() + type.slice(1)}</span>
+                            </Animated>
+                        </p>
                     </div>
                     <div className='pokemon-attribute'>
                         <p><FontAwesomeIcon icon={faRunning}/> Principal move: {principalMove.charAt(0).toUpperCase() + principalMove.slice(1)}</p>
