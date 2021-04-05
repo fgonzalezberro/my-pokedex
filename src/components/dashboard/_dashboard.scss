@@ -1,7 +1,7 @@
 // Dashboard styles
 .dashboard {
   width: 70%;
-  height: calc(100vh - 260px);
+  min-height: calc(100vh - 260px);
   background-color: $light-transparent;
   position: relative;
   border-radius: 20px;
