@@ -11,7 +11,7 @@ import {AppContext} from '../provider/provider.js';
 // Import Animated CSS plugin
 import {Animated} from "react-animated-css";
 
-// Import image
+// Import images
 import fire from '../../assets/img/attributes-img/fire-type.png';
 import bug from '../../assets/img/attributes-img/bug-type.webp';
 import dark from '../../assets/img/attributes-img/dark-type.png';

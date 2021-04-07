@@ -21,11 +21,33 @@ footer {
       color: #fff;
       font-size: 20px;
       transition: all 0.5s;
-      margin: 0 10px;
+      margin: 0 5px;
       cursor: pointer;
 
       &:hover {
         color: $grey;
+      }
+    }
+  }
+}
+
+// Media Querys
+@media screen and (max-width: 992px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  footer {
+    p {
+      font-size: 13px;
+
+      .github-icon {
+        font-size: 15px;
       }
     }
   }

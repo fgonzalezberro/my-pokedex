@@ -8,7 +8,7 @@ body {
   background-image: url("../../assets/img/pokedex.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 150% 150%;
   animation: move 10s linear infinite alternate;
   @keyframes move {
     from {
@@ -68,6 +68,5 @@ body {
 .pokedex-app {
   height: 100vh;
   width: 100%;
-  align-content: space-between;
   @include flex-col-center-center;
 }

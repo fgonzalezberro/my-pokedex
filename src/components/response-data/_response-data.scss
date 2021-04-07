@@ -1,7 +1,7 @@
 // Response data styles
 .pokemon-response {
   @include flex-row-center-center;
-  width: 60%;
+  width: 70%;
   height: 100%;
 
   .pokemon-response-data {
@@ -104,6 +104,46 @@
           @include blackBackground;
         }
       }
+    }
+  }
+}
+
+// Media Querys
+@media screen and (max-width: 1200px) {
+  .pokemon-response {
+    width: 80%;
+
+    .pokemon-response-data {
+      width: 20%;
+      margin-right: 10px;
+    }
+
+    .pokemon-response-attributes {
+      .pokemon-response-attributes-container {
+        .pokemon-attribute {
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .pokemon-response {
+    @include flex-col-center-center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    padding: 1%;
+
+    .pokemon-response-data {
+      min-width: 50%;
+      margin: 2rem 0;
+    }
+
+    .pokemon-response-attributes {
+      width: 100%;
     }
   }
 }

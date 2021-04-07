@@ -20,7 +20,7 @@ const Footer = () =>{
     // Footer image state
     const [footerImage , setImage] = useState({
         imageUrl : pichu,
-        imageSize : 50,
+        imageSize : 40,
         animationState : false
     });
 
@@ -31,7 +31,7 @@ const Footer = () =>{
     const footerHover = () =>{
         setImage({
             imageUrl : raichu,
-            imageSize : 70,
+            imageSize : 50,
             animationState : true
         });
     }
@@ -39,7 +39,7 @@ const Footer = () =>{
     const footerLeave = () =>{
         setImage({
             imageUrl : pichu,
-            imageSize : 50,
+            imageSize : 40,
             animationState : false
         });
     }
