@@ -132,10 +132,10 @@
 
 @media screen and (max-width: 992px) {
   .pokemon-response {
-    @include flex-col-center-center;
     justify-content: flex-start;
     overflow-y: scroll;
     padding: 1%;
+    @include flex-col-center-center;
 
     .pokemon-response-data {
       min-width: 50%;

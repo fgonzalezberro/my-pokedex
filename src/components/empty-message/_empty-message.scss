@@ -18,3 +18,15 @@
     height: auto;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .empty-message {
+    p {
+      font-size: 13px;
+    }
+
+    img {
+      width: 120px;
+    }
+  }
+}

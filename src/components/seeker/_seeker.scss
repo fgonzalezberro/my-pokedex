@@ -45,3 +45,17 @@
     margin-left: -35px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .seeker-component {
+    width: 90%;
+
+    form {
+      width: 80%;
+
+      &:hover {
+        width: 90%;
+      }
+    }
+  }
+}

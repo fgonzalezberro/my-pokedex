@@ -18,3 +18,15 @@
     height: auto;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .error-message {
+    p {
+      font-size: 13px;
+    }
+
+    img {
+      width: 80px;
+    }
+  }
+}

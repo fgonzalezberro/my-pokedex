@@ -24,20 +24,13 @@
 }
 
 // Media Querys
-@media screen and (max-width: 1024px) {
-  .dashboard {
-    padding: 1%;
-    min-height: auto;
-
-    .master-ball {
-      width: 50px;
-    }
-  }
-}
-
 @media screen and (max-width: 992px) {
   .dashboard {
     height: 300px;
     padding: 2% 0;
+
+    .master-ball {
+      width: 50px;
+    }
   }
 }

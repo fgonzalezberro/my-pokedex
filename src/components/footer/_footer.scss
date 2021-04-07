@@ -32,15 +32,6 @@ footer {
 }
 
 // Media Querys
-@media screen and (max-width: 992px) {
-  footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin-top: 20px;
-  }
-}
-
 @media screen and (max-width: 640px) {
   footer {
     p {
